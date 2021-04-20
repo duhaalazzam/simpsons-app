@@ -7,6 +7,9 @@
     <title>Document</title>
 </head>
 <body>
+    <header>
+        <%-include('layout/header.ejs')%>
+    </header>
     <main>
         <%data.forEach(element=>{%>
               <div>
@@ -24,5 +27,8 @@
             </form>
         <%})%>
     </main>
+    <footer>
+        <%-include('layout/footer.ejs')%>
+    </footer>
 </body>
 </html>
