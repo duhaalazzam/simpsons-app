@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <%data.forEach(element=>{%>
+              <div>
+                  <p>
+                      <%=element.quote%>
+                  </p>
+                  <p>
+                    <%=element.character%>
+                </p>
+                <img src="<%=element.image%>" alt="">
+                <p><%=element.charcterDirection%></p>
+              </div>
+              <form action=/favorite-quotes:quote_id?_method='PUT': method="POST">
+                <input type="text" value= <%=element.quote%> name='quote'>
+                <input type="text" value= <%=element.character%> name='charcter'>
+                <button>edit quote</button>
+            </form>
+            <form action=/favorite-quotes:quote_id?_method='DELET': method="POST">
+                <button>delete quote</button>
+            </form>
+        <%})%>
+    </main>
+</body>
+</html>
